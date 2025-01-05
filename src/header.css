@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  /* gap: 50px; */
+  background-image: url("../public/team.jpeg");
+  background-repeat: no-repeat;
+  background-position: 0% -29%;
+  background-size: cover;
+  /* width: 100%; */
+  height: 350px;
+  min-width: 1235px;
+  max-width: 1280px;
+}
+
+.image {
+  height: 120px;
+  width: 10%;
+}
+.headerText {
+  text-align: center;
+  color: beige;
+  background-color: blue;
+  height: 50px;
+  /* font-size: 20px; */
+  min-width: 382px;
+  padding: 10px 23%;
+}
+
+.languages {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+  height: 70px;
+  /* flex-shrink: 0; */
+  background-color: blue;
+  padding-right: 3%;
+}
+.buttonLang {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+}
+.buttonLang.active {
+  background-color: red;
+  color: white;
+}
+
+.buttonLang.inactive {
+  background-color: grey;
+  color: white;
+}

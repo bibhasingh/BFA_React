@@ -1,0 +1,24 @@
+.footer {
+  background-color: grey;
+  text-align: center;
+  color: white;
+  font-size: large;
+  padding: auto;
+  min-width: 1235px;
+  max-width: 1280px;
+
+  /* margin-right: 50px; */
+}
+.contact {
+  padding: 15px;
+  /* margin-bottom: 5px; */
+}
+.email {
+  margin: 15px;
+  font-weight: bold;
+}
+.logo {
+  height: 30px;
+  width: 30px;
+  margin: 15px;
+}

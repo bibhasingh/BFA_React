@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  /* margin-top: 20px; */
+}
+.menuList {
+  background-color: blue;
+  padding: 10px 1% 100px 1%;
+}
+.buttonMenu {
+  display: block;
+  margin-top: 20px;
+  padding: 15px 32px;
+  border-radius: 12px;
+  width: 150px;
+}
+
+.buttonMenu.active {
+  background-color: green;
+  color: white;
+}
+.firstMenu {
+  margin-top: 50px;
+}
