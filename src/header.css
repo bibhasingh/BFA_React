@@ -48,3 +48,21 @@
   background-color: grey;
   color: white;
 }
+
+/* @media screen and (max-width: 600px) {
+  .header {
+    min-width: 600px;
+    max-width: 600px;
+    background-image: none;
+    height: 60px;
+  }
+  .headerText {
+    min-width: 200px;
+    font-size: small;
+    height: 15px;
+  } */
+  .image {
+    height: 30px;
+    width: 15%;
+  }
+}

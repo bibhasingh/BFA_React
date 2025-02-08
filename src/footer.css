@@ -22,3 +22,10 @@
   width: 30px;
   margin: 15px;
 }
+
+/* @media screen and (max-width: 600px) {
+  .footer {
+    min-width: 600px;
+    max-width: 600px;
+  } 
+} */
