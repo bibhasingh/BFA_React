@@ -49,20 +49,28 @@
   color: white;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .header {
-    min-width: 600px;
-    max-width: 600px;
+    min-width: 100px;
+    max-width: 100%;
     background-image: none;
     height: 60px;
   }
   .headerText {
-    min-width: 200px;
-    font-size: small;
-    height: 15px;
-  } 
+    min-width: 250px;
+    font-size: large;
+    height: 30px;
+    padding: 10px 0;
+  }
   .image {
     height: 30px;
     width: 15%;
   }
-} */
+  .languages {
+    height: 50px;
+    padding-right: 1%;
+  }
+  .buttonLang {
+    padding: 6px;
+  }
+}

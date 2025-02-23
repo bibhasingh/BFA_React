@@ -10,22 +10,35 @@ function Menu() {
   const [content, setContent] = useState("Home");
   const { myCurrentLang } = useMyLang();
   const [menuClick, setMenu] = useState("Home");
+  const [mobileClick, setMobileStatus] = useState("hide");
 
   const contentHome = () => {
     setContent("Home");
     setMenu("Home");
+    setMobileStatus("hide");
   };
   const contentSchedule = () => {
     setContent("Schedule");
     setMenu("Schedule");
+    setMobileStatus("hide");
   };
   const contentGallery = () => {
     setContent("Gallery");
     setMenu("Gallery");
+    setMobileStatus("hide");
   };
   const contentRegistration = () => {
     setContent("Registration");
     setMenu("Registration");
+    setMobileStatus("hide");
+  };
+
+  const displayMobileMenu = () => {
+    if (mobileClick === "show") {
+      setMobileStatus("hide");
+    } else {
+      setMobileStatus("show");
+    }
   };
 
   const buttonText = (firstText, secondText, thirdText) => {
@@ -41,7 +54,13 @@ function Menu() {
   return (
     <div className="menu">
       {/* <img src="logo.jpeg" /> */}
-      <div className="menuList">
+      <button className="mobileButton" onClick={displayMobileMenu}>
+        ☰
+      </button>
+      <div
+        className={`menuList ${
+          mobileClick === "show" ? "active" : "inactive"
+        }`}>
         <button
           className={`buttonMenu ${
             menuClick === "Home" ? "active" : "inactive"
@@ -71,13 +90,15 @@ function Menu() {
           {buttonText("Inscription", "Registratie", "Registration")}
         </button>
       </div>
-      {console.log(myCurrentLang)}
-      {content === "Home" ? <Home lang={myCurrentLang} /> : null}
-      {content === "Schedule" ? <Schedule lang={myCurrentLang} /> : null}
-      {content === "Gallery" ? <Gallery lang={myCurrentLang} /> : null}
-      {content === "Registration" ? (
-        <Registration lang={myCurrentLang} />
-      ) : null}
+      {/* {console.log(myCurrentLang)} */}
+      <div className="mobileContentMargin">
+        {content === "Home" ? <Home lang={myCurrentLang} /> : null}
+        {content === "Schedule" ? <Schedule lang={myCurrentLang} /> : null}
+        {content === "Gallery" ? <Gallery lang={myCurrentLang} /> : null}
+        {content === "Registration" ? (
+          <Registration lang={myCurrentLang} />
+        ) : null}
+      </div>
     </div>
   );
 }

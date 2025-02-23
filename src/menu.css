@@ -1,5 +1,6 @@
 .menu {
   display: flex;
+  min-height: 500px;
   /* margin-top: 20px; */
 }
 .menuList {
@@ -22,8 +23,30 @@
   margin-top: 50px;
 }
 
-/* @media screen and (max-width: 600px) {
+.mobileButton {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
   .menuList {
     display: none;
   }
-} */
+  .menuList.active {
+    display: block;
+  }
+  .menu {
+    display: flex;
+    gap: 0;
+  }
+
+  .mobileButton {
+    display: flex;
+    height: 5px;
+    width: 5px;
+    font-size: 50px;
+    border: 0;
+  }
+  .mobileContentMargin {
+    margin-left: 40px;
+  }
+}

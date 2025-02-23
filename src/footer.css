@@ -23,9 +23,9 @@
   margin: 15px;
 }
 
-/* @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .footer {
-    min-width: 600px;
-    max-width: 600px;
-  } 
-} */
+    min-width: 100px;
+    max-width: 100%;
+  }
+}
