@@ -15,6 +15,7 @@ function Home({ lang }) {
     Nl: "Dit project heeft verschillende doelstellingen die zich richten op:",
     En: "This project is set on several objectives which will focus on:",
   };
+
   const head2 = {
     Fr: "L’EDUCATION",
     Nl: "HET ONDERWIJS",
@@ -46,6 +47,17 @@ function Home({ lang }) {
     En: "Currently, our experienced coach Marso Younesse (qualified by the Belgian Football Union) plans and organizes the specific training entirely.",
   };
   const p7 = {
+    Fr: "Les différents ateliers :",
+    Nl: "De verschillende ateliers :",
+    En: "The different workshops :"
+  };
+  const ul1= {
+    Fr: ["Technique de course,","Atelier,","Renforcement musculaire,","Spécifique technique,","Tactique,"],
+    Nl: ["Cursus techniek,","Werkplaats,","Spierversterking,","Specifieke techniek,","Tactisch,"],
+    En: [" Running technique,","Workshop,"," Muscle strengthening,","Technical specific,","Tactics,"]
+
+  };
+  const p8 = {
     Fr: "L'Académie BFA a pour objectif de monter d'un niveau ; elle souhaite devenir un centre de formation bien structuré en s'appuyant sur des ressources disponibles OU acquises.",
     // "Le football servira de base à la formation et à l'éducation. Les autres sports ne seront pas négligés (exemples : athlétisme, fitness, etc.)",
     Nl: "De BFA Academy wil een niveau hogerop komen; ze wil een goed gestructureerd opleidingscentrum worden, gebaseerd op beschikbare OF verworven middelen.",
@@ -53,18 +65,70 @@ function Home({ lang }) {
     En: "The BFA Academy aims to move up a level; she wants to become a well-structured training center based on available OR acquired resources.",
     // "Football will serve as a basis for training and education. Other sports will not be neglected (examples: Athletics, fitness, etc.)",
   };
+  const ul2 = {
+    Fr:["L’éducation,","L’initiation sportive,", "La préformation,","La Formation,","L’organisation"
+    ],
+    Nl: ["Opleiding,","Sportinitiatie,", "Vooropleiding,","Training,","Organisatie"
+    ],
+    En: ["Education,"," Sports initiation,", "Pre-training,","Training,","Organization"
+    ]
+  };
+
+  const p9 = {
+    Fr:"Le football servira de base à la formation et à l’éducation. D’autres sports ne seront pas à négliger (exemples : Athlétisme, fitness...)",
+    Nl: "Voetbal zal als basis dienen voor training en opleiding. Andere sporten zullen niet worden verwaarloosd (bijvoorbeeld: atletiek, fitness, etc.)",
+    En:"Football will serve as a basis for training and education. Other sports will not be neglected (examples: Athletics, fitness, etc.)"
+  };
+  const p10 = {
+Fr: ["LES OBJECTIFS A ATTEINDRE ","Création du Centre de formation","Aider le sportif à ATTEINDRE son NIVEAU MAXIMAL."],
+Nl: ["LES OBJECTIEF EEN ATTEINDRE","Oprichting van het Opleidingscentrum","Help de atleet zijn MAXIMUMNIVEAU TE BEREIKEN."],
+En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Help the athlete REACH their MAXIMUM LEVEL."]
+  };
+  const head4 = {
+    Fr: "LA FORMATION",
+    Nl: "OPLEIDING",
+    En: "TRAINING"
+  };
+  const p11 = {
+ Fr: ["Elle permettra, faisant suite à une bonne préformation,d'acquérir tous les moyens nécessaires","pour être compétitifs et prétendre la réussite.","LE SUIVI DE CARRIERE ET TRANSFERT","Un plan de carrière bien élaboré et un bon suivi permettra de conseiller et d'accompagner le","jeune sportif à se procurer un nouveau challenge."],
+ Nl: ["Het zal het mogelijk maken om, na een goede vooropleiding, alle noodzakelijke middelen te verwerven","om competitief te zijn en succes te claimen.","LOOPBAANBEWAKING EN OVERDRACHT","Een goed ontwikkeld loopbaanplan en goede monitoring maken het mogelijk om de","jeune sportif à se procurer un nouveau challenge."],
+ En: ["It will allow, following good pre-training","to acquire all the necessary means","to be competitive and claim success.","LE SUIVI DE CARRIERE ET TRANSFERT","A well-developed career plan and good monitoring will make it possible to advise and support the","jeune sportif à se procurer un nouveau challenge."]
+  };
+
   return (
     <div>
       <h3>{head[lang]}</h3>
-      <h4>{p1[lang]}</h4>
-      <h4>{p2[lang]}</h4>
+      <p>{p1[lang]}</p>
+      <p>{p2[lang]}</p>
+      <ul>
+        <li>{ul2[lang][0]}</li>
+        <li>{ul2[lang][1]}</li>
+        <li>{ul2[lang][2]}</li>
+        <li>{ul2[lang][3]}</li>
+        <li>{ul2[lang][4]}</li>
+      </ul>
       <h3>{head2[lang]}</h3>
-      <h4>{p3[lang]}</h4>
+      <p>{p3[lang]}</p>
       <h3>{head3[lang]}</h3>
-      <h4>{p4[lang]}</h4>
-      <h4>{p5[lang]}</h4>
-      <h4>{p6[lang]}</h4>
-      <h4>{p7[lang]}</h4>
+      <p>{p4[lang]}</p>
+      <p>{p5[lang]}</p>
+      <p>{p6[lang]}</p>
+      <p>{p7[lang]}</p>
+     
+     
+      <ul>
+        <li>{ul1[lang][0]}</li>
+        <li>{ul1[lang][1]}</li>
+        <li>{ul1[lang][2]}</li>
+        <li>{ul1[lang][3]}</li>
+        <li>{ul1[lang][4]}</li>
+      </ul>
+      <p>{p8[lang]}</p>
+      <p>{p9[lang]}</p>
+      <p>{p10[lang][0]}<br />{p10[lang][1]}<br />{p10[lang][2]}</p>
+      <h3>{head4[lang]}</h3>
+      <p>{p11[lang][0]}<br />{p11[lang][1]}<br />{p11[lang][2]}<br />{p11[lang][3]}<br />{p11[lang][4]}</p>
+
     </div>
   );
 }
