@@ -9,6 +9,7 @@ function App() {
     <>
       <MyProvider>
         <Header />
+        <div className="spacer"></div>
         <Menu />
       </MyProvider>
       <Footer />

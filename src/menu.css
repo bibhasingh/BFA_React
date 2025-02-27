@@ -1,9 +1,10 @@
 .menu {
   display: flex;
   min-height: 500px;
-  /* margin-top: 20px; */
+  /* margin-top: 350px; */
 }
 .menuList {
+  /* position: fixed; */
   background-color: blue;
   padding: 10px 1% 100px 1%;
 }

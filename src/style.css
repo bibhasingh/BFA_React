@@ -6,9 +6,15 @@
   max-width: 1280px;
   margin: auto;
 }
+.spacer {
+  height: 350px;
+}
 
 @media screen and (max-width: 600px) {
   #root {
     max-width: 600px;
+  }
+  .spacer {
+    height: 60px;
   }
 }
