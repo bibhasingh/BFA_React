@@ -1,13 +1,13 @@
 function Home({ lang }) {
   const head = {
-    Fr: "Bienvenue Sur Le Site De La Belgium Football Academy!",
+    Fr: "Bienvenue Sur Le Site De La Belgium Football Academy!",
     Nl: "Welkom Op De Website Van De Belgische Voetbalacademie!",
     En: "Welcome To The Belgium Football Academy Website!",
   };
 
   const p1 = {
-    Fr: "L’académie B.F.A. est un projet principalement sportif, elle a été créée en janvier 2018.",
-    Nl: "L’académie B.F.A. Het is een sportief hoofdproject dat in januari 2018 is gecreëerd.",
+    Fr: "L'académie B.F.A. est un projet principalement sportif, elle a été créée en janvier 2018.",
+    Nl: "L'académie B.F.A. Het is een sportief hoofdproject dat in januari 2018 is gecreëerd.",
     En: "The BFA academy is a mainly sports project, it was created in January 2018.",
   };
   const p2 = {
@@ -17,7 +17,7 @@ function Home({ lang }) {
   };
 
   const head2 = {
-    Fr: "L’EDUCATION",
+    Fr: "L'EDUCATION",
     Nl: "HET ONDERWIJS",
     En: "EDUCATION",
   };
@@ -27,12 +27,12 @@ function Home({ lang }) {
     En: "A good education is the basis of training both at the academic and sports level. The B.F.A. aims to support and question school children as part of their studies.",
   };
   const head3 = {
-    Fr: "L’INITIATION SPORTIVE",
+    Fr: "L'INITIATION SPORTIVE",
     Nl: "SPORTIEVE INLEIDING",
     En: "PRE-TRAINING",
   };
   const p4 = {
-    Fr: "Elle permettra d’acquérir les moyens physiques et techniques adéquats pour prétendre à une bonne formation.",
+    Fr: "Elle permettra d'acquérir les moyens physiques et techniques adéquats pour prétendre à une bonne formation.",
     Nl: "Het stelt u in staat de juiste fysieke en technische middelen te verwerven om in aanmerking te komen voor een goede opleiding.",
     En: "It will enable you to acquire the appropriate physical and technical means to qualify for good training.",
   };
@@ -58,26 +58,21 @@ function Home({ lang }) {
 
   };
   const p8 = {
-    Fr: "L'Académie BFA a pour objectif de monter d'un niveau ; elle souhaite devenir un centre de formation bien structuré en s'appuyant sur des ressources disponibles OU acquises.",
-    // "Le football servira de base à la formation et à l'éducation. Les autres sports ne seront pas négligés (exemples : athlétisme, fitness, etc.)",
-    Nl: "De BFA Academy wil een niveau hogerop komen; ze wil een goed gestructureerd opleidingscentrum worden, gebaseerd op beschikbare OF verworven middelen.",
-    // "Voetbal zal dienen als basis voor training en opleiding. Andere sporten zullen niet worden verwaarloosd (voorbeelden: Atletiek, fitness, etc.)",
-    En: "The BFA Academy aims to move up a level; she wants to become a well-structured training center based on available OR acquired resources.",
-    // "Football will serve as a basis for training and education. Other sports will not be neglected (examples: Athletics, fitness, etc.)",
+    Fr: ["L'Académie BFA a pour objectif de monter d'un niveau , elle souhaite devenir un centre de formation bien structuré en s'appuyant sur des ressources disponibles OU acquises.",
+
+     "Le football servira de base à la formation et à l'éducation. Les autres sports ne seront pas négligés (exemples : athlétisme, fitness, etc.)"],
+    Nl: ["De BFA Academy wil een niveau hogerop komen , ze wil een goed gestructureerd opleidingscentrum worden, gebaseerd op beschikbare OF verworven middelen.",
+    "Voetbal zal dienen als basis voor training en opleiding. Andere sporten zullen niet worden verwaarloosd (voorbeelden: Atletiek, fitness, etc.)"],
+    En: ["The BFA Academy aims to move up a level , she wants to become a well-structured training center based on available OR acquired resources.",
+    "Football will serve as a basis for training and education. Other sports will not be neglected (examples: Athletics, fitness, etc.)"]
   };
   const ul2 = {
-    Fr:["L’éducation,","L’initiation sportive,", "La préformation,","La Formation,","L’organisation"
+    Fr:["L'éducation,","L'initiation sportive,", "La préformation,","La Formation,","L'organisation"
     ],
     Nl: ["Opleiding,","Sportinitiatie,", "Vooropleiding,","Training,","Organisatie"
     ],
     En: ["Education,"," Sports initiation,", "Pre-training,","Training,","Organization"
     ]
-  };
-
-  const p9 = {
-    Fr:"Le football servira de base à la formation et à l’éducation. D’autres sports ne seront pas à négliger (exemples : Athlétisme, fitness...)",
-    Nl: "Voetbal zal als basis dienen voor training en opleiding. Andere sporten zullen niet worden verwaarloosd (bijvoorbeeld: atletiek, fitness, etc.)",
-    En:"Football will serve as a basis for training and education. Other sports will not be neglected (examples: Athletics, fitness, etc.)"
   };
   const p10 = {
 Fr: ["LES OBJECTIFS A ATTEINDRE ","Création du Centre de formation","Aider le sportif à ATTEINDRE son NIVEAU MAXIMAL."],
@@ -94,7 +89,41 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
  Nl: ["Het zal het mogelijk maken om, na een goede vooropleiding, alle noodzakelijke middelen te verwerven","om competitief te zijn en succes te claimen.","LOOPBAANBEWAKING EN OVERDRACHT","Een goed ontwikkeld loopbaanplan en goede monitoring maken het mogelijk om de","jeune sportif à se procurer un nouveau challenge."],
  En: ["It will allow, following good pre-training","to acquire all the necessary means","to be competitive and claim success.","LE SUIVI DE CARRIERE ET TRANSFERT","A well-developed career plan and good monitoring will make it possible to advise and support the","jeune sportif à se procurer un nouveau challenge."]
   };
+  const head5 = {
+    Fr: "L'ORGANISATION",
+    Nl: "DE ORGANISATIE",
+    En: "THE ORGANIZATION"
+  };
+  const p12 = {
+   Fr: ["La B.F.A. se basera sur les textes  (statuts et règlement intérieur) afin de créer une bonne organisation qu'elle soit administrativ",
+    "financière, sportive ou encore éducative.",
+    "Pour le lancement de ce projet sachez que nous avons indépendament investi avec nos propres",
+    "moyens financiers notamment pour l'achat du matériel (ballon, cône, etc...) ainsi que pour la",
+    "location de la salle... en attente d'un éventuel sponsor ou d'une aide communale...",
+    "Belgium Football Academy vous garantit la progression..."
+   ],
+   Nl: ["De B.F.A. zal gebaseerd zijn op de teksten (statuten en huishoudelijk reglement) om een goede organisatie te creëren, zowel administratief als administratief",
+    "financieel, sportief of zelfs educatief.",
+    "Voor de lancering van dit project kunt u er rekening mee houden dat we onafhankelijk met onze eigen middelen hebben geïnvesteerd",
+    "financiële middelen, met name voor de aanschaf van uitrusting (bal, kegel, etc.) en voor de",
+    "verhuur van de kamer... wachten op een mogelijke sponsor of gemeentelijke hulp...",
+    "Belgium Football Academy garandeert je vooruitgang..."
+   ],
 
+   En: ["The B.F.A. will be based on the texts (statutes and internal regulations) in order to create a good organization, whether administrative",
+    "financial, sporting or even educational.",
+    "For the launch of this project, please know that we independently invested with our own",
+    "financial means, particularly for the purchase of equipment (ball, cone, etc.) as well as for the",
+    "rental of the room... waiting for a possible sponsor or municipal aid...",
+    "Belgium Football Academy guarantees you progress..."
+   ]
+  };
+  const head6 = {
+    Fr: ["MARSO YOUNESSE","RESPONSABLE B.F.A."],
+    Nl: ["MARSO YOUNESSE","DIRECTEUR VAN DE BFA"],
+    En: ["MARSO YOUNESSE","B.F.A. MANAGER"]
+
+  };
   return (
     <div>
       <h3>{head[lang]}</h3>
@@ -123,12 +152,14 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
         <li>{ul1[lang][3]}</li>
         <li>{ul1[lang][4]}</li>
       </ul>
-      <p>{p8[lang]}</p>
-      <p>{p9[lang]}</p>
+      <p>{p8[lang][0]}<br />{p8[lang][1]}</p>
+     
       <p>{p10[lang][0]}<br />{p10[lang][1]}<br />{p10[lang][2]}</p>
       <h3>{head4[lang]}</h3>
       <p>{p11[lang][0]}<br />{p11[lang][1]}<br />{p11[lang][2]}<br />{p11[lang][3]}<br />{p11[lang][4]}</p>
-
+      <h3>{head5[lang]}</h3>
+      <p>{p12[lang][0]}<br />{p12[lang][1]}<br />{p12[lang][2]}<br />{p12[lang][3]}<br />{p12[lang][4]}<br />{p12[lang][5]}</p>
+      <h3>{head6[lang][0]}<br />{head6[lang][1]}</h3>
     </div>
   );
 }
