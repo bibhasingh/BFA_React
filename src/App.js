@@ -11,8 +11,8 @@ function App() {
         <Header />
         <div className="spacer"></div>
         <Menu />
+        <Footer />
       </MyProvider>
-      <Footer />
     </>
   );
 }

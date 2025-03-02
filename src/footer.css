@@ -1,7 +1,6 @@
 .footer {
   display: flex;
-  /* position: fixed; */
-  padding: 20px 0 20px 2%;
+  padding: 10px 0 10px 2%;
   gap: 15%;
   background-color: grey;
   text-align: center;
@@ -9,27 +8,28 @@
   font-size: large;
   padding: auto;
   min-width: 1235px;
+  /* margin-top: 100px; */
 }
 
 .foothead {
-  padding: 15px 0;
+  padding: 10px 0;
   font-size: x-large;
   /* margin-bottom: 5px; */
 }
 .email {
-  margin: 15px;
+  margin: 5px;
   font-weight: bold;
 }
 .logo {
   height: 30px;
   width: 30px;
-  margin: 15px;
+  margin: 5px;
 }
 
 @media screen and (max-width: 600px) {
   .footer {
     display: block;
-    min-width: 100px;
-    max-width: 100%;
+    min-width: 400px;
+    max-width: 400px;
   }
 }

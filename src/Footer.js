@@ -1,10 +1,24 @@
 import "./footer.css";
+import { useMyLang } from "./Lang";
 
 function Footer() {
+  const { myCurrentLang } = useMyLang();
+
+  const footmenu = (firstText, secondText, thirdText) => {
+    if (myCurrentLang === "Fr") {
+      return firstText;
+    } else if (myCurrentLang === "Nl") {
+      return secondText;
+    } else {
+      return thirdText;
+    }
+  };
+
   return (
     <div className="footer">
+      {console.log(myCurrentLang)}
       <div className="footdiv">
-        <h2 className="foothead">Address</h2>
+        <h2 className="foothead">{footmenu("Addresse", "adres", "Address")}</h2>
         <p>
           Konkel Street 208, 1200 Brussels
           <br />
@@ -12,11 +26,14 @@ function Footer() {
         </p>
       </div>
       <div className="footdiv">
-        <p className="foothead">Contact</p>
+        <p className="foothead">{footmenu("Contact", "Contact", "Contact")}</p>
+        <p className="email">Phone: 0484 97 71 55</p>
         <p className="email">Email: belgiumfootballacademy2105@gmail.com</p>
       </div>
       <div className="footdiv">
-        <p className="foothead">Social Media</p>
+        <p className="foothead">
+          {footmenu("Réseaux sociaux", "Sociale media", "Social Media")}
+        </p>
         <a href="https://wa.me/32466465302">
           <img src="wa.jpeg" alt="watsAppImage" className="logo" />
         </a>

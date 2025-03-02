@@ -61,34 +61,36 @@ function Menu() {
         className={`menuList ${
           mobileClick === "show" ? "active" : "inactive"
         }`}>
-        <button
-          className={`buttonMenu ${
-            menuClick === "Home" ? "active" : "inactive"
-          } firstMenu `}
-          onClick={contentHome}>
-          {buttonText("Accueil", "Welkom", "Welcome")}
-        </button>
-        <button
-          className={`buttonMenu ${
-            menuClick === "Schedule" ? "active" : "inactive"
-          } firstMenu `}
-          onClick={contentSchedule}>
-          {buttonText("Horaires", "Plan", "Schedule")}
-        </button>
-        <button
-          className={`buttonMenu ${
-            menuClick === "Gallery" ? "active" : "inactive"
-          } firstMenu `}
-          onClick={contentGallery}>
-          {buttonText("Galary", "Galerij", "Gallary")}
-        </button>
-        <button
-          className={`buttonMenu ${
-            menuClick === "Registration" ? "active" : "inactive"
-          } firstMenu `}
-          onClick={contentRegistration}>
-          {buttonText("Inscription", "Registratie", "Registration")}
-        </button>
+        <div className="fixButton">
+          <button
+            className={`buttonMenu ${
+              menuClick === "Home" ? "active" : "inactive"
+            }  `}
+            onClick={contentHome}>
+            {buttonText("Accueil", "Home", "Home")}
+          </button>
+          <button
+            className={`buttonMenu ${
+              menuClick === "Schedule" ? "active" : "inactive"
+            }  `}
+            onClick={contentSchedule}>
+            {buttonText("Horaires", "Rooster", "Schedule")}
+          </button>
+          <button
+            className={`buttonMenu ${
+              menuClick === "Gallery" ? "active" : "inactive"
+            }  `}
+            onClick={contentGallery}>
+            {buttonText("Galary", "Galerij", "Gallary")}
+          </button>
+          <button
+            className={`buttonMenu ${
+              menuClick === "Registration" ? "active" : "inactive"
+            }  `}
+            onClick={contentRegistration}>
+            {buttonText("Inscription", "Registratie", "Registration")}
+          </button>
+        </div>
       </div>
       {/* {console.log(myCurrentLang)} */}
       <div className="mobileContentMargin">

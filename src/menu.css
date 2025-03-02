@@ -1,17 +1,21 @@
 .menu {
   display: flex;
-  min-height: 500px;
+  min-height: 700px;
+  /* position: fixed; */
+  /* height: 1000px; */
   /* margin-top: 350px; */
 }
 .menuList {
   /* position: fixed; */
   background-color: blue;
   padding: 10px 1% 100px 1%;
+  min-width: 150px;
+  /* position: fixed; */
 }
 .buttonMenu {
   display: block;
-  margin-top: 20px;
-  padding: 15px 32px;
+  margin-top: 15px;
+  padding: 10px 32px;
   border-radius: 12px;
   width: 150px;
 }
@@ -20,10 +24,9 @@
   background-color: green;
   color: white;
 }
-.firstMenu {
-  margin-top: 50px;
+.fixButton {
+  position: fixed;
 }
-
 .mobileButton {
   display: none;
 }
@@ -38,6 +41,8 @@
   .menu {
     display: flex;
     gap: 0;
+    min-width: 400px;
+    max-width: 400px;
   }
 
   .mobileButton {
