@@ -1,4 +1,54 @@
-function Schedule() {
-  return <h1>This is Horaires content</h1>;
+function Schedule({ lang }) {
+  const head = {
+   Fr: "HORAIRES",
+   Nl: "ROOSTER",
+   En: "SCHEDULE"
+  };
+  const head2 = {
+    Fr: ["Les mercredis de 16h00 à 17h45 (rue Konkel)",
+      "Les samedis de 18h45 à 20h15 (Don Bosco)",
+      "Les dimanches de 16h45 à 18h30 (Sportcity)",
+      "Entrainements individuels possibles un vendredi sur deux de 17h à 18h00 et les dimanches de 15h00 à 16h00 (sur rendez-vous)"
+  ],
+    Nl: ["Woensdag van 16.00 uur tot 17.45 uur (Konkelstraat)",
+      "Zaterdag van 18.45 uur tot 20.15 uur (Don Bosco)",
+      "Zondag van 16.45 uur tot 18.30 uur (Sportcity)",
+      "Individuele training mogelijk elke andere vrijdag vanaf 17.00 uur. tot 18.00 uur en zondag vanaf 15.00 uur tot 16.00 uur (op afspraak)"
+    ],
+    En: ["Wednesdays from 4:00 p.m. to 5:45 p.m. (rue Konkel)",
+      "Saturdays from 6:45 p.m. to 8:15 p.m. (Don Bosco)",
+      "Sundays from 4:45 p.m. to 6:30 p.m. (Sportcity)",
+      "Individual training possible every other Friday from 5 p.m. to 6 p.m. and Sundays from 3 p.m. to 4 p.m. (by appointment)"
+    ]
+   };
+   const p1 = {
+    Fr: ["Chaussures de foot en salle obligatoires",
+      "Catégorie : De 7 à 15 ans",
+    "* Formateur diplômé par l'Union Belge",
+  "* Langues parlées : Bilingues (Fr/Nl/EN)"
+
+],
+    Nl: ["Zaalvoetbalschoenen vereist",
+      "Categorie: Van 7 tot 15 jaar oud",
+      "* Trainer gekwalificeerd door de Belgische Unie",
+      "* Gesproken talen: tweetalig (Fr/Nl/EN)"
+    ],
+    En: ["Indoor soccer shoes required",
+      "Category: From 7 to 15 years old",
+      "* Trainer qualified by the Belgian Union",
+      "* Languages spoken: Bilingual (Fr/Nl/EN)"
+    ]
+   }
+
+
+
+
+
+
+  return (<div>
+<h2>{head[lang]}</h2>
+<h3>{head2[lang][0]}<br />{head2[lang][1]}<br />{head2[lang][2]}<br />{head2[lang][3]}</h3>
+<p>{p1[lang][0]}<br />{p1[lang][1]}<br />{p1[lang][2]}<br />{p1[lang][3]}</p>
+  </div>);
 }
 export default Schedule;
