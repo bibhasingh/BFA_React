@@ -74,3 +74,17 @@
     padding: 6px;
   }
 }
+
+@media screen and (max-height: 700px) {
+  .header {
+    min-width: 100px;
+    max-width: 100%;
+    background-image: none;
+    height: 60px;
+  }
+  .image {
+    height: 70px;
+   
+  }
+
+}

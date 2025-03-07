@@ -1,4 +1,15 @@
+import "./registration.css";
+
 function Registration({ content }) {
-  return <h1>This is Contact content</h1>;
+  return (
+    <form className="formPage">
+      <label>Name:
+        <input type="text" />
+      </label>
+      <label>Age:
+        <input type="text" />
+      </label>
+    </form>
+)
 }
 export default Registration;

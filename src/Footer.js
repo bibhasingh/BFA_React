@@ -34,13 +34,13 @@ function Footer() {
         <p className="foothead">
           {footmenu("Réseaux sociaux", "Sociale media", "Social Media")}
         </p>
-        <a href="https://wa.me/32466465302">
+        <a href="https://wa.me/32484977155">
           <img src="wa.jpeg" alt="watsAppImage" className="logo" />
         </a>
-        <a href="https://wa.me/32466465302">
+        <a href="https://www.facebook.com/p/Belgium-Football-Academy-100063772592913/">
           <img src="fb.jpeg" alt="watsAppImage" className="logo" />
         </a>
-        <a href="https://wa.me/32466465302">
+        <a href="https://m.me/100063772592913">
           <img src="mess.jpeg" alt="watsAppImage" className="logo" />
         </a>
       </div>
