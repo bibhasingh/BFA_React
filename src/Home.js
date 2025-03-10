@@ -1,3 +1,5 @@
+import "./home.css";
+
 function Home({ lang }) {
   const head = {
     Fr: "Bienvenue Sur Le Site De La Belgium Football Academy!",
@@ -125,41 +127,41 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
 
   };
   return (
-    <div>
-      <h3>{head[lang]}</h3>
-      <p>{p1[lang]}</p>
-      <p>{p2[lang]}</p>
-      <ul>
-        <li>{ul2[lang][0]}</li>
-        <li>{ul2[lang][1]}</li>
-        <li>{ul2[lang][2]}</li>
-        <li>{ul2[lang][3]}</li>
-        <li>{ul2[lang][4]}</li>
+    <div className="home">
+      <h3 className="head1">{head[lang]}</h3>
+      <p className="para">{p1[lang]}</p>
+      <p className="para">{p2[lang]}</p>
+      <ul className="ulist">
+        <li className="listItem">{ul2[lang][0]}</li>
+        <li className="listItem">{ul2[lang][1]}</li>
+        <li className="listItem">{ul2[lang][2]}</li>
+        <li className="listItem">{ul2[lang][3]}</li>
+        <li className="listItem">{ul2[lang][4]}</li>
       </ul>
-      <h3>{head2[lang]}</h3>
-      <p>{p3[lang]}</p>
-      <h3>{head3[lang]}</h3>
-      <p>{p4[lang]}</p>
-      <p>{p5[lang]}</p>
-      <p>{p6[lang]}</p>
-      <p>{p7[lang]}</p>
+      <h3 className="head2" >{head2[lang]}</h3>
+      <p className="para">{p3[lang]}</p>
+      <h3 className="head2">{head3[lang]}</h3>
+      <p className="para">{p4[lang]}</p>
+      <p className="para">{p5[lang]}</p>
+      <p className="para">{p6[lang]}</p>
+      <p className="para">{p7[lang]}</p>
      
      
-      <ul>
-        <li>{ul1[lang][0]}</li>
-        <li>{ul1[lang][1]}</li>
-        <li>{ul1[lang][2]}</li>
-        <li>{ul1[lang][3]}</li>
-        <li>{ul1[lang][4]}</li>
+      <ul className="ulist">
+        <li className="listItem">{ul1[lang][0]}</li>
+        <li className="listItem">{ul1[lang][1]}</li>
+        <li className="listItem">{ul1[lang][2]}</li>
+        <li className="listItem">{ul1[lang][3]}</li>
+        <li className="listItem">{ul1[lang][4]}</li>
       </ul>
-      <p>{p8[lang][0]}<br />{p8[lang][1]}</p>
+      <p className="para">{p8[lang][0]}<br />{p8[lang][1]}</p>
      
-      <p>{p10[lang][0]}<br />{p10[lang][1]}<br />{p10[lang][2]}</p>
-      <h3>{head4[lang]}</h3>
-      <p>{p11[lang][0]}<br />{p11[lang][1]}<br />{p11[lang][2]}<br />{p11[lang][3]}<br />{p11[lang][4]}</p>
-      <h3>{head5[lang]}</h3>
-      <p>{p12[lang][0]}<br />{p12[lang][1]}<br />{p12[lang][2]}<br />{p12[lang][3]}<br />{p12[lang][4]}<br />{p12[lang][5]}</p>
-      <h3>{head6[lang][0]}<br />{head6[lang][1]}</h3>
+      <p className="para">{p10[lang][0]}<br />{p10[lang][1]}<br />{p10[lang][2]}</p>
+      <h3  className="head2">{head4[lang]}</h3>
+      <p className="para">{p11[lang][0]}<br />{p11[lang][1]}<br />{p11[lang][2]}<br />{p11[lang][3]}<br />{p11[lang][4]}</p>
+      <h3  className="head2">{head5[lang]}</h3>
+      <p className="para">{p12[lang][0]}<br />{p12[lang][1]}<br />{p12[lang][2]}<br />{p12[lang][3]}<br />{p12[lang][4]}<br />{p12[lang][5]}</p>
+      <p  className="owner">{head6[lang][0]}<br />{head6[lang][1]}</p>
     </div>
   );
 }

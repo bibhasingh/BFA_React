@@ -93,7 +93,7 @@ function Menu() {
         </div>
       </div>
       {/* {console.log(myCurrentLang)} */}
-      <div className="mobileContentMargin">
+      <div className="contentBody mobileContentMargin">
         {content === "Home" ? <Home lang={myCurrentLang} /> : null}
         {content === "Schedule" ? <Schedule lang={myCurrentLang} /> : null}
         {content === "Gallery" ? <Gallery lang={myCurrentLang} /> : null}

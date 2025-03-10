@@ -23,7 +23,7 @@ function Header() {
             buttonClick === "Fr" ? "active" : "inactive"
           }`}
           onClick={() => setButtonClick("Fr")}>
-          Fr
+          FR
         </button>
         <button
           className={`buttonLang ${

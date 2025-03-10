@@ -1,0 +1,42 @@
+.home{
+    margin: 10px 20px;
+}
+
+.head1{
+    margin-bottom: 10px;
+    font-size: xx-large;
+}
+
+.para{
+    margin-bottom: 10px;
+    font-size: 20PX;
+}
+
+.ulist{
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.listItem{
+    margin-bottom: 5px;
+}
+
+.head2{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: x-large;
+}
+.owner{
+    margin-top: 30px;
+    font-size: large;
+}
+
+@media screen and (max-width: 600px) {
+    .head1{
+        font-size: x-large;
+    }
+    .head2{
+        font-size: large;
+    }
+}

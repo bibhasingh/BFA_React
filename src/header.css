@@ -16,11 +16,11 @@
 .headerText {
   text-align: center;
   color: beige;
-  background-color: blue;
+  background-color: rgb(255, 21, 0);
   height: 50px;
   /* font-size: 20px; */
-  min-width: 382px;
-  padding: 10px 23%;
+  min-width: 372px;
+  padding: 10px 22.5%;
 }
 
 .languages {
@@ -29,16 +29,17 @@
   align-items: flex-start;
   height: 70px;
   /* flex-shrink: 0; */
-  background-color: blue;
+  background-color:  rgb(255, 21, 0);
   padding-right: 4%;
 }
 .buttonLang {
   padding: 12px;
   margin-top: 10px;
   border-radius: 12px;
+  font-size: large;
 }
 .buttonLang.active {
-  background-color: red;
+  background-color: green;
   color: white;
 }
 
@@ -71,7 +72,8 @@
     min-width: 105px;
   }
   .buttonLang {
-    padding: 6px;
+    padding: 3px;
+    font-size: small;
   }
 }
 
