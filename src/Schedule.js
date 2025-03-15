@@ -1,3 +1,5 @@
+import "./schedule.css";
+
 function Schedule({ lang }) {
   const head = {
    Fr: "HORAIRES",
@@ -46,9 +48,12 @@ function Schedule({ lang }) {
 
 
   return (<div>
-<h2>{head[lang]}</h2>
-<h3>{head2[lang][0]}<br />{head2[lang][1]}<br />{head2[lang][2]}<br />{head2[lang][3]}</h3>
-<p>{p1[lang][0]}<br />{p1[lang][1]}<br />{p1[lang][2]}<br />{p1[lang][3]}</p>
+<h2 className="schedule"><u>{head[lang]}</u></h2>
+<h3 className="timing">{head2[lang][0]}</h3>
+<h3 className="timing">{head2[lang][1]}</h3>
+<h3 className="timing">{head2[lang][2]}</h3>
+<h3 className="timing">{head2[lang][3]}</h3>
+<p className="instructions">{p1[lang][0]}<br />{p1[lang][1]}<br />{p1[lang][2]}<br />{p1[lang][3]}</p>
   </div>);
 }
 export default Schedule;

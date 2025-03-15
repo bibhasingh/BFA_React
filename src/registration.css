@@ -1,3 +1,45 @@
-.formPage{
-    display: block;
+.regForm{
+    width: 1105px;
+    margin:30px 0;
 }
+.completeRegistration{
+    width: 1105px;
+    margin:30px 0; 
+}
+
+
+.formHead{
+    text-align: center;
+    
+}
+.formFields{
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.field{
+    display: flex;
+    align-items: center;
+    gap:50px
+    
+}
+
+.field :first-child {
+    min-width: 200px;
+    font-size: x-large;
+  }
+  .field :nth-child(2){
+    min-width: 400px;
+    min-height: 40px;
+  }
+
+  .submit{
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    font-size: x-large;
+    color: white;
+    margin-top: 50px;
+    margin-left: 200px;
+    cursor: pointer;
+  }
