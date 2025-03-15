@@ -103,7 +103,7 @@ function Registration({ lang }) {
       <h1 className="formHead">{registration[lang]}</h1>
       <form onSubmit={handleSubmit} className="formFields">
         <label className="field">
-        <p>{lastName[lang]}</p>
+        <p>{lastName[lang]}:</p>
           <input
             type="text"
             name="lastName"

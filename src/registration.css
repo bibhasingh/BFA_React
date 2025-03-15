@@ -1,5 +1,5 @@
 .regForm{
-    width: 1105px;
+    min-width: 1105px;
     margin:30px 0;
 }
 .completeRegistration{
@@ -42,4 +42,32 @@
     margin-top: 50px;
     margin-left: 200px;
     cursor: pointer;
+    border-radius: 12px;
   }
+
+
+  @media screen and (max-width: 600px) {
+    .regForm{
+        min-width: 100px;
+        max-width: 100%;
+    }
+
+    .formFields{
+        margin-left: 30px;
+    }
+    .field{
+      gap: 30px;
+    }
+    .field :first-child {
+        min-width: 100px;
+        font-size: small;
+      }
+      .field :nth-child(2){
+        min-width: 200px;
+        min-height: 40px;
+      }
+
+      .submit{
+        margin-left: 100px;
+      }
+}
