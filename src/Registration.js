@@ -51,6 +51,7 @@ function Registration({ lang }) {
     dob:"",
     position:"",
     email: "",
+    phone: "",
     message: ""
   });
 
@@ -76,6 +77,7 @@ function Registration({ lang }) {
         dob: formData.dob,
         position: formData.position,
         email: formData.email,
+        phone: formData.phone,
         message: formData.message
       },
       "i6ieZgSizH-DsUDx9" // Replace with your EmailJS user/public key
@@ -83,7 +85,7 @@ function Registration({ lang }) {
     .then(
       (response) => {
         console.log("Email sent successfully!", response.status, response.text);
-        alert(`Thank you, ${formData.firstName}! Your message has been sent.`);
+       // alert(`Thank you, ${formData.firstName}! Your message has been sent.`);
       },
       (error) => {
         console.error("Failed to send email.", error);
@@ -127,7 +129,7 @@ function Registration({ lang }) {
         <label className="field">
           <p>{dob[lang]}:</p>
           <input
-            type="text"
+            type="date"
             name="dob"
             value={formData.dob}
             onChange={handleChange}
@@ -162,6 +164,17 @@ function Registration({ lang }) {
         </label>
         <br />
         <label className="field">
+          <p>Phone:</p>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <br />
+        <label className="field">
          <p>Message:</p> 
           <textarea
             name="message"
@@ -176,7 +189,7 @@ function Registration({ lang }) {
   }
 
   function registrationComplete(){
-    return <h2 className="completeRegistration">Registration successfully</h2>
+    return <h2 className="completeRegistration">Thank you for your request.Will contact you soon.</h2>
   }
   return (
     <div>
