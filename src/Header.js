@@ -15,7 +15,7 @@ function Header() {
 
   return (
     <div className="header">
-      <img src="logo.jpeg" alt="logo" className="image" />
+      <img src="logo.jpeg" alt="Best football academy in Belgium" className="image" />
       <h1 className="headerText">Belgium Football Academy</h1>
       <div className="languages">
         <button

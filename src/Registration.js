@@ -40,6 +40,12 @@ const registration = {
   En: ["Select an option","Striker","Midfielder","Goalkeeper"],
  };
 
+ const submit = {
+  Fr: ["Envoyer"],
+  Nl: ["Verzenden"],
+  En: ["Submit"],
+ };
+
 
 function Registration({ lang }) {
 
@@ -183,7 +189,7 @@ function Registration({ lang }) {
           />
         </label>
         <br />
-        <button type="submit" className="submit">Submit</button>
+        <button type="submit" className="submit">{submit[lang]}</button>
       </form>
     </div>)
   }

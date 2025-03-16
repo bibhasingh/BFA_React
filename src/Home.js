@@ -9,7 +9,7 @@ function Home({ lang }) {
 
   const p1 = {
     Fr: "L'académie B.F.A. est un projet principalement sportif, elle a été créée en janvier 2018.",
-    Nl: "L'académie B.F.A. Het is een sportief hoofdproject dat in januari 2018 is gecreëerd.",
+    Nl: "De B.F.A. Academie is een voornamelijk sportproject en werd opgericht in januari 2018.",
     En: "The BFA academy is a mainly sports project, it was created in January 2018.",
   };
   const p2 = {
