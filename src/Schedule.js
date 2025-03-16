@@ -27,18 +27,18 @@ function Schedule({ lang }) {
     Fr: ["Chaussures de foot en salle obligatoires",
       "Catégorie : De 7 à 15 ans",
     "* Formateur diplômé par l'Union Belge",
-  "* Langues parlées : Bilingues (Fr/Nl/EN)"
+  "* Langues parlées : Bilingues (Fr/Nl)"
 
 ],
     Nl: ["Zaalvoetbalschoenen vereist",
       "Categorie: Van 7 tot 15 jaar oud",
       "* Trainer gekwalificeerd door de Belgische Unie",
-      "* Gesproken talen: tweetalig (Fr/Nl/EN)"
+      "* Gesproken talen: tweetalig (Fr/Nl)"
     ],
     En: ["Indoor soccer shoes required",
       "Category: From 7 to 15 years old",
       "* Trainer qualified by the Belgian Union",
-      "* Languages spoken: Bilingual (Fr/Nl/EN)"
+      "* Languages spoken: Bilingual (Fr/Nl)"
     ]
    }
 
