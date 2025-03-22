@@ -102,7 +102,7 @@
 @media screen and (max-height: 700px) {
   .header {
     min-width: 100px;
-    max-width: 100%;
+    max-width: 90%;
     background-image: none;
     height: 60px;
   }
@@ -110,5 +110,25 @@
     height: 70px;
    
   }
+  .background-video{
+    display: none;
+  }
+
+  .blackdiv{
+    height: 50px;
+    padding: 5px 15%;
+  }
+  .headerText2{
+    height: 50px;
+    padding: 10px 5% 0 5%;
+    font-size: small;
+  }
+
+  languages {
+    padding-right: 6%;
+    padding-left: 6%;
+  
+  }
+
 
 }
