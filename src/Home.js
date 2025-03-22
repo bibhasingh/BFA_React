@@ -120,12 +120,7 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
     "Belgium Football Academy guarantees you progress..."
    ]
   };
-  const head6 = {
-    Fr: ["MARSO YOUNESSE","RESPONSABLE B.F.A."],
-    Nl: ["MARSO YOUNESSE","DIRECTEUR VAN DE BFA"],
-    En: ["MARSO YOUNESSE","B.F.A. MANAGER"]
 
-  };
   return (
     <div className="home">
       <h3 className="head1">{head[lang]}</h3>
@@ -161,7 +156,7 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
       <p className="para">{p11[lang][0]}<br />{p11[lang][1]}<br />{p11[lang][2]}<br />{p11[lang][3]}<br />{p11[lang][4]}</p>
       <h3  className="head2">{head5[lang]}</h3>
       <p className="para">{p12[lang][0]}<br />{p12[lang][1]}<br />{p12[lang][2]}<br />{p12[lang][3]}<br />{p12[lang][4]}<br />{p12[lang][5]}</p>
-      <p  className="owner">{head6[lang][0]}<br />{head6[lang][1]}</p>
+      <br></br><br></br>
     </div>
   );
 }

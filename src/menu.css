@@ -7,7 +7,7 @@
 }
 .menuList {
   /* position: fixed; */
-  background-color: rgb(241, 167, 89);
+  background-color: red;
   padding: 10px 1% 100px 1%;
   min-width: 150px;
   /* position: fixed; */
@@ -22,14 +22,18 @@
 }
 
 .buttonMenu.active {
-  background-color: green;
+  background-color: yellow;
+  color: black;
+}
+.buttonMenu.inactive {
+  background-color: black;
   color: white;
 }
 .fixButton {
   position: fixed;
 }
 .contentBody{
-  background-color: rgb(255, 224, 224);
+  background-color: rgb(252, 252, 172);
 }
 .mobileButton {
   display: none;

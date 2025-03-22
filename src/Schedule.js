@@ -7,18 +7,15 @@ function Schedule({ lang }) {
    En: "SCHEDULE"
   };
   const head2 = {
-    Fr: ["Les mercredis de 16h00 à 17h45 (rue Konkel)",
-      "Les samedis de 18h45 à 20h15 (Don Bosco)",
+    Fr: ["Les samedis de 18h45 à 20h15 (Don Bosco)",
       "Les dimanches de 16h45 à 18h30 (Sportcity)",
       "Entrainements individuels possibles un vendredi sur deux de 17h à 18h00 et les dimanches de 15h00 à 16h00 (sur rendez-vous)"
   ],
-    Nl: ["Woensdag van 16.00 uur tot 17.45 uur (Konkelstraat)",
-      "Zaterdag van 18.45 uur tot 20.15 uur (Don Bosco)",
+    Nl: ["Zaterdag van 18.45 uur tot 20.15 uur (Don Bosco)",
       "Zondag van 16.45 uur tot 18.30 uur (Sportcity)",
       "Individuele training mogelijk elke andere vrijdag vanaf 17.00 uur. tot 18.00 uur en zondag vanaf 15.00 uur tot 16.00 uur (op afspraak)"
     ],
-    En: ["Wednesdays from 4:00 p.m. to 5:45 p.m. (rue Konkel)",
-      "Saturdays from 6:45 p.m. to 8:15 p.m. (Don Bosco)",
+    En: ["Saturdays from 6:45 p.m. to 8:15 p.m. (Don Bosco)",
       "Sundays from 4:45 p.m. to 6:30 p.m. (Sportcity)",
       "Individual training possible every other Friday from 5 p.m. to 6 p.m. and Sundays from 3 p.m. to 4 p.m. (by appointment)"
     ]

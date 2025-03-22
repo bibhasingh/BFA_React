@@ -2,7 +2,7 @@
   display: flex;
   padding: 10px 0 10px 2%;
   gap: 15%;
-  background-color: grey;
+  background-color: black;
   text-align: center;
   color: white;
   font-size: large;
@@ -18,7 +18,8 @@
 }
 .email {
   margin: 5px;
-  font-weight: bold;
+  font-size: large;
+  /* font-weight: bold; */
 }
 .logo {
   height: 30px;

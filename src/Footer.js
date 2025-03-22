@@ -18,7 +18,7 @@ function Footer() {
     <div className="footer">
       {console.log(myCurrentLang)}
       <div className="footdiv">
-        <h2 className="foothead">{footmenu("Addresse", "adres", "Address")}</h2>
+        <h2 className="foothead">{footmenu("Addresse", "Adres", "Address")}</h2>
         <p>
           Konkel Street 208, 1200 Brussels
           <br />
@@ -27,7 +27,7 @@ function Footer() {
       </div>
       <div className="footdiv">
         <p className="foothead">{footmenu("Contact", "Contact", "Contact")}</p>
-        <p className="email">Phone: 0484 97 71 55</p>
+        <p className="email">{footmenu("Personne De Contact", "ContactPersoon", "Contact Person")}: Sacha Frances</p>
         <p className="email">Email: belgiumfootballacademy2105@gmail.com</p>
       </div>
       <div className="footdiv">

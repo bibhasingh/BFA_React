@@ -16,7 +16,14 @@ function Header() {
   return (
     <div className="header">
       <img src="logo.jpeg" alt="Best football academy in Belgium" className="image" />
-      <h1 className="headerText">Belgium Football Academy</h1>
+      <div className="headerText">
+        <div className="blackdiv"> </div>
+      <h1 className="headerText2">Belgium Football Academy</h1>
+      </div>
+      <video className="background-video" autoPlay loop muted>
+      <source src="intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+      </video>
       <div className="languages">
         <button
           className={`buttonLang ${
