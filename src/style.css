@@ -12,10 +12,10 @@
 
 @media screen and (max-width: 600px) {
   #root {
-    max-width: 600px;
+    max-width: 100%;
   }
   .spacer {
-    height: 60px;
+    height: 50px;
   }
 }
 

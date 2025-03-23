@@ -17,8 +17,8 @@ function Header() {
     <div className="header">
       <img src="logo.jpeg" alt="Best football academy in Belgium" className="image" />
       <div className="headerText">
-        <div className="blackdiv"> </div>
-      <h1 className="headerText2">Belgium Football Academy</h1>
+        <h1 className="headerText1">Belgiu </h1>
+      <h1 className="headerText2">m Football Academy</h1>
       </div>
       <video className="background-video" autoPlay loop muted>
       <source src="intro.mp4" type="video/mp4" />
