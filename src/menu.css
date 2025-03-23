@@ -65,6 +65,11 @@
   .mobileContentMargin {
     margin-left: 40px;
   }
+  .contentBody{
+    min-width: 350px;
+    max-width: 350px;
+
+  }
 }
 
 @media screen and (max-height: 700px) {
