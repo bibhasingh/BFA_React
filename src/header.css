@@ -11,9 +11,10 @@
 .background-video{
   position: fixed;
   margin-top: 50px;
+  margin-left: 177px;
   /* left: 0;  */
-  width: 76%;
-  height: 41%;
+  min-width: 1103px;
+  height: 300px;
   object-fit: cover;
   z-index: -1;
 }
@@ -34,7 +35,7 @@
 .headerText1{
   background-color: black;
   color: white;
-  height: 50px;
+  height: 40px;
   padding: 10px 0 10px 35% ;
   text-align: right;
   
@@ -42,7 +43,7 @@
 .headerText2{
   background-color: yellow;
   text-align: left;
-  height: 50px;
+  height: 40px;
   padding: 10px 22% 10px 0;
  
 }
@@ -52,7 +53,7 @@
   display: flex;
   gap: 5px;
   align-items: flex-start;
-  height: 70px;
+  height: 60px;
   /* flex-shrink: 0; */
   background-color:  rgb(255, 30, 0);
   padding-right: 6%;
@@ -60,7 +61,7 @@
 
 }
 .buttonLang {
-  padding: 12px;
+  padding: 10px 12px;
   margin-top: 10px;
   border-radius: 12px;
   font-size: large;
@@ -79,13 +80,14 @@
 
 @media screen and (max-width: 600px) {
   .header {
-    min-height: 100px;
+    height: 80px;
     max-width: 100%;
     background-image: none;
     
   }
   .headerText{
-    min-width: 5%;
+    min-width: 220px;
+   
   }
   
   .image {
@@ -95,7 +97,7 @@
   .languages {
     height: 60px;
     padding-right: 1%;
-    min-width: 10%;
+    min-width: 120px;
     padding-right: 1%;
     padding-left: 1%;
   }
@@ -105,6 +107,7 @@
   }
   .background-video{
     display: none;
+
   }
 
   .headerText1{
@@ -115,9 +118,9 @@
   }
   .headerText2{
     height: 40px;
-    padding: 20px 1% 0 0;
+    padding: 20px 5% 0 0;
     font-size: medium;
-    /* min-width: 50px; */
+    /* min-width: 180px; */
 
   }
 
@@ -128,7 +131,7 @@
 
 
 
-@media screen and (max-height: 700px) {
+/* @media screen and (max-height: 800px) {
   .header {
     background-image: none;
     height: 60px;
@@ -144,4 +147,4 @@
   
 
 
-}
+} */
