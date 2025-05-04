@@ -21,13 +21,29 @@ const registration = {
   Nl: "voornaam",
   En: "First Name"
  };
-
+ 
  const dob = {
   Fr: "Date de naissance",
   Nl: "Geboortedatum",
   En: "Date Of Birth"
  };
 
+ const height = {
+  Fr: "Hauteur (en cm)",
+  Nl: "Hoogte (in cm)",
+  En: "Height (in cm)"
+ };
+
+ const weight = {
+  Fr: "Poids (en kg)",
+  Nl: "Gewicht (in kg)",
+  En: "Weight (in kg)"
+ };
+ const currentClub = {
+  Fr: "Club actuel",
+  Nl: "Huidige club",
+  En: "Current Club"
+ };
  const position = {
   Fr: "Position",
   Nl: "Positie",
@@ -35,9 +51,39 @@ const registration = {
  };
 
  const options = {
-  Fr: ["Sélectionnez une option","Gréviste","Milieu de terrain","Gardienne "],
+  Fr: ["Sélectionnez une option","Gréviste","Milieu de terrain","Gardienne"],
   Nl: ["Selecteer een optie","Aanvaller","Middenvelder","Doelman"],
   En: ["Select an option","Striker","Midfielder","Goalkeeper"],
+ };
+
+ const foot = {
+  Fr: "Pied",
+  Nl: "Voet",
+  En: "Foot"
+ };
+
+ const footOption = {
+  Fr: ["Sélectionnez une option","gauche","droit"],
+  Nl: ["Selecteer een optie","links","rechts"],
+  En: ["Select an option","Left","Right"],
+ };
+
+ const training ={
+  Fr: "Jours d'entraînement",
+  Nl: "Trainingsdagen",
+  En: "Training days"
+ }
+
+ const trainingChoice ={
+  Fr: ["Sélectionnez une option","Samedi(18h45 à 20h15, Don Bosco)","Dimanche(16h45 à 18h30, Sportcity)","Les deux jours"],
+  Nl: ["Selecteer een optie","Zaterdag(18h45 à 20h15, Don Bosco)","Zondag(16h45 à 18h30, Sportcity)","Beide dagen"],
+  En: ["Select an option","Saturday(18h45 à 20h15, Don Bosco)","Sunday(16h45 à 18h30, Sportcity)", "Both Days"]
+ }
+
+ const photo = {
+  Fr: "Télécharger une photo",
+  Nl: "Foto uploaden",
+  En: "Upload Photo",
  };
 
  const submit = {
@@ -45,6 +91,38 @@ const registration = {
   Nl: ["Verzenden"],
   En: ["Submit"],
  };
+
+ function optimizeBase64(base64String, maxWidth = 50, maxHeight = 60, quality = 0.2) {
+  return new Promise((resolve) => {
+      const img = new Image();
+      img.src = base64String;
+
+      img.onload = () => { // Ensures image is fully loaded
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+
+          let width = img.width;
+          let height = img.height;
+
+          if (width > maxWidth) {
+              height *= maxWidth / width;
+              width = maxWidth;
+          }
+          if (height > maxHeight) {
+              width *= maxHeight / height;
+              height = maxHeight;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+
+          // Convert to WebP for better compression
+          const optimizedBase64 = canvas.toDataURL("image/png", quality);
+          resolve(optimizedBase64);
+      };
+  });
+}
 
 
 function Registration({ lang }) {
@@ -73,6 +151,17 @@ function Registration({ lang }) {
     event.preventDefault();
     console.log("Form submitted:", formData);
 
+    const fileInput = document.getElementById("imageUpload");
+    
+    const reader = new FileReader();
+    reader.readAsDataURL(fileInput.files[0]);
+
+    reader.onload = async function (event) {
+        // const imageBase64 = reader.result;
+        const imageBase64Reduce= await  optimizeBase64(event.target.result)
+    
+
+
     emailjs
     .send(
       "service_822j3sh", // Replace with your EmailJS service ID
@@ -81,23 +170,30 @@ function Registration({ lang }) {
         lastName: formData.lastName,
         firstName: formData.firstName,
         dob: formData.dob,
+        height: formData.height,
+        weight:formData.weight,
         position: formData.position,
+        foot: formData.foot,
+        currentClub: formData.currentClub,
         email: formData.email,
         phone: formData.phone,
-        message: formData.message
+        trainingChoice: formData.trainingChoice,
+        message: formData.message,
+        image_base64: imageBase64Reduce
       },
       "i6ieZgSizH-DsUDx9" // Replace with your EmailJS user/public key
     )
     .then(
       (response) => {
         console.log("Email sent successfully!", response.status, response.text);
-       // alert(`Thank you, ${formData.firstName}! Your message has been sent.`);
+       alert("Thank you for your request.Will contact you soon.");
       },
       (error) => {
         console.error("Failed to send email.", error);
         alert("Oops! Something went wrong. Please try again.");
       }
     );
+  }
 
     setCurrentComponent(0)
 
@@ -111,7 +207,7 @@ function Registration({ lang }) {
       <h1 className="formHead">{registration[lang]}</h1>
       <form onSubmit={handleSubmit} className="formFields">
         <label className="field">
-        <p>{lastName[lang]}:</p>
+        <p className="required">{lastName[lang]}:</p>
           <input
             type="text"
             name="lastName"
@@ -122,7 +218,7 @@ function Registration({ lang }) {
         </label>
         <br />
         <label className="field">
-          <p>{firstName[lang]}:</p>
+          <p className="required">{firstName[lang]}:</p>
           <input
             type="text"
             name="firstName"
@@ -133,7 +229,7 @@ function Registration({ lang }) {
         </label>
         <br />
         <label className="field">
-          <p>{dob[lang]}:</p>
+          <p className="required">{dob[lang]}:</p>
           <input
             type="date"
             name="dob"
@@ -144,7 +240,29 @@ function Registration({ lang }) {
         </label>
         <br />
         <label className="field">
-        <p>{position[lang]}:</p>
+          <p className="required">{height[lang]}:</p>
+          <input
+            type="text"
+            name="height"
+            value={formData.height}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <br />
+        <label className="field">
+          <p className="required">{weight[lang]}:</p>
+          <input
+            type="text"
+            name="weight"
+            value={formData.weight}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <br />
+        <label className="field">
+        <p className="required">{position[lang]}:</p>
 
           <select
             name="position"
@@ -152,14 +270,39 @@ function Registration({ lang }) {
             onChange={handleChange}
           >
             <option value="">{options[lang][0]}</option>
-            <option value="Striker">{options[lang][1]}</option>
-            <option value="Midfielder">{options[lang][2]}</option>
-            <option value="Goalkeeper">{options[lang][3]}</option>
+            <option value="Gréviste">{options[lang][1]}</option>
+            <option value="Milieu de terrain">{options[lang][2]}</option>
+            <option value="Gardienne">{options[lang][3]}</option>
           </select>
         </label>
         <br />
         <label className="field">
-          <p>E-mail:</p>
+        <p className="required">{foot[lang]}:</p>
+
+          <select
+            name="foot"
+            value={formData.foot}
+            onChange={handleChange}
+          >
+            <option value="">{footOption[lang][0]}</option>
+            <option value="Gauche">{footOption[lang][1]}</option>
+            <option value="droit">{footOption[lang][2]}</option>
+          </select>
+        </label>
+        <br />
+        <label className="field">
+          <p className="required">{currentClub[lang]}:</p>
+          <input
+            type="text"
+            name="currentClub"
+            value={formData.currentClub}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <br />
+        <label className="field">
+          <p className="required">E-mail:</p>
           <input
             type="email"
             name="email"
@@ -170,7 +313,7 @@ function Registration({ lang }) {
         </label>
         <br />
         <label className="field">
-          <p>Phone:</p>
+          <p className="required">Phone:</p>
           <input
             type="tel"
             name="phone"
@@ -181,11 +324,39 @@ function Registration({ lang }) {
         </label>
         <br />
         <label className="field">
+        <p className="required">{training[lang]}:</p>
+        
+         <select
+            name="trainingChoice"
+            value={formData.training}
+            onChange={handleChange}
+            className="dropdown"
+          >
+            <option value="">{trainingChoice[lang][0]}</option>
+            <option value="Samedi">{trainingChoice[lang][1]}</option>
+            <option value="Dimanche">{trainingChoice[lang][2]}</option>
+            <option value="Samedi and Dimanche">{trainingChoice[lang][3]}</option>
+          </select>
+        </label>
+        <br />
+        <label className="field">
          <p>Message:</p> 
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
+          />
+        </label>
+        <br />        
+        <label className="field">
+          <p>{photo[lang]}:</p>
+          <input
+            type="file"
+            name="file"
+            id="imageUpload"
+            // value={formData.phone}
+            // onChange={handleChange}
+            
           />
         </label>
         <br />

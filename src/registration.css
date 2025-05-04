@@ -25,7 +25,7 @@
 }
 
 .field :first-child {
-    min-width: 200px;
+    min-width: 250px;
     font-size: x-large;
   }
   .field :nth-child(2){
@@ -45,6 +45,10 @@
     border-radius: 12px;
   }
 
+  .required::after {
+    content: " *";
+    color: red;
+  }
 
   @media screen and (max-width: 600px) {
     .regForm{
@@ -56,18 +60,23 @@
         margin-left: 30px;
     }
     .field{
-      gap: 30px;
+      gap: 50px;
     }
     .field :first-child {
         min-width: 100px;
         font-size: small;
       }
       .field :nth-child(2){
-        min-width: 200px;
+        min-width: 130px;
         min-height: 40px;
       }
 
       .submit{
         margin-left: 100px;
       }
+
+      /* .dropdown{
+        width: 50px;
+
+      } */
 }
