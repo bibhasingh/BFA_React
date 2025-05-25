@@ -1,4 +1,5 @@
 import "./home.css";
+import Notice from "./Notice";
 
 function Home({ lang }) {
   const head = {
@@ -121,8 +122,12 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
    ]
   };
 
+
+
   return (
     <div className="home">
+      <div className="notice">
+      <div>
       <h3 className="head1">{head[lang]}</h3>
       <p className="para">{p1[lang]}</p>
       <p className="para">{p2[lang]}</p>
@@ -133,6 +138,9 @@ En: ["LESSON OBJECTIVE AN ATTEINDRE","Establishment of the Training Center","Hel
         <li className="listItem">{ul2[lang][3]}</li>
         <li className="listItem">{ul2[lang][4]}</li>
       </ul>
+      </div>
+          <Notice />
+      </div>
       <h3 className="head2" >{head2[lang]}</h3>
       <p className="para">{p3[lang]}</p>
       <h3 className="head2">{head3[lang]}</h3>

@@ -2,6 +2,7 @@ import Header from "./Header";
 import Menu from "./Menu";
 import Footer from "./Footer";
 import { MyProvider } from "./Lang";
+import { ContentProvider } from "./Content";
 import "./style.css";
 
 function App() {
@@ -10,7 +11,9 @@ function App() {
       <MyProvider>
         <Header />
         <div className="spacer"></div>
-        <Menu />
+        <ContentProvider>
+          <Menu />
+        </ContentProvider>
         <Footer />
       </MyProvider>
     </>

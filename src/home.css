@@ -32,6 +32,10 @@
     font-size: large;
 }
 
+.notice{
+    display: flex;
+}
+
 @media screen and (max-width: 600px) {
     .head1{
         font-size: x-large;
