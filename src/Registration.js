@@ -128,16 +128,39 @@ const registration = {
 function Registration({ lang }) {
 
   const [currentComponent, setCurrentComponent] = useState(1);
-
   const [formData, setFormData] = useState({
     lastName: "",
     firstName: "",
-    dob:"",
-    position:"",
+    dob: "",
+    height: "",
+    weight: "",
+    position: "",
+    foot: "",
+    currentClub: "",
     email: "",
     phone: "",
+    trainingChoice: "",
     message: ""
   });
+  const [errors, setErrors] = useState({});
+  const [photoFile, setPhotoFile] = useState(null);
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.lastName.trim()) newErrors.lastName = true;
+    if (!formData.firstName.trim()) newErrors.firstName = true;
+    if (!formData.dob) newErrors.dob = true;
+    if (!formData.height || isNaN(formData.height)) newErrors.height = true;
+    if (!formData.weight || isNaN(formData.weight)) newErrors.weight = true;
+    if (!formData.position) newErrors.position = true;
+    if (!formData.foot) newErrors.foot = true;
+    if (!formData.currentClub.trim()) newErrors.currentClub = true;
+    if (!formData.email || !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) newErrors.email = true;
+    if (!formData.phone || !/^[\d+\-\s()]{6,}$/.test(formData.phone)) newErrors.phone = true;
+    if (!formData.trainingChoice) newErrors.trainingChoice = true;
+    if (!photoFile) newErrors.photo = true;
+    return newErrors;
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -145,224 +168,239 @@ function Registration({ lang }) {
       ...prevData,
       [name]: value
     }));
+    setErrors((prev) => ({ ...prev, [name]: false }));
+  };
+
+  const handlePhotoChange = (event) => {
+    setPhotoFile(event.target.files[0]);
+    setErrors((prev) => ({ ...prev, photo: false }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted:", formData);
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) {
+      alert("Please fill all required fields correctly.");
+      return;
+    }
 
-    const fileInput = document.getElementById("imageUpload");
-    
     const reader = new FileReader();
-    reader.readAsDataURL(fileInput.files[0]);
+    reader.readAsDataURL(photoFile);
 
     reader.onload = async function (event) {
-        // const imageBase64 = reader.result;
-        const imageBase64Reduce= await  optimizeBase64(event.target.result)
-    
+      const imageBase64Reduce = await optimizeBase64(event.target.result);
 
-
-    emailjs
-    .send(
-      "service_822j3sh", // Replace with your EmailJS service ID
-      "template_q51lhge", // Replace with your EmailJS template ID
-      {
-        lastName: formData.lastName,
-        firstName: formData.firstName,
-        dob: formData.dob,
-        height: formData.height,
-        weight:formData.weight,
-        position: formData.position,
-        foot: formData.foot,
-        currentClub: formData.currentClub,
-        email: formData.email,
-        phone: formData.phone,
-        trainingChoice: formData.trainingChoice,
-        message: formData.message,
-        image_base64: imageBase64Reduce
-      },
-      "i6ieZgSizH-DsUDx9" // Replace with your EmailJS user/public key
-    )
-    .then(
-      (response) => {
-        console.log("Email sent successfully!", response.status, response.text);
-       alert("Thank you for your request.Will contact you soon.");
-      },
-      (error) => {
-        console.error("Failed to send email.", error);
-        alert("Oops! Something went wrong. Please try again.");
-      }
-    );
-  }
-
-    setCurrentComponent(0)
-
-
-    
-
+      emailjs
+        .send(
+          "service_822j3sh",
+          "template_q51lhge",
+          {
+            lastName: formData.lastName,
+            firstName: formData.firstName,
+            dob: formData.dob,
+            height: formData.height,
+            weight: formData.weight,
+            position: formData.position,
+            foot: formData.foot,
+            currentClub: formData.currentClub,
+            email: formData.email,
+            phone: formData.phone,
+            trainingChoice: formData.trainingChoice,
+            message: formData.message,
+            image_base64: imageBase64Reduce
+          },
+          "i6ieZgSizH-DsUDx9"
+        )
+        .then(
+          (response) => {
+            console.log("Email sent successfully!", response.status, response.text);
+            alert("Thank you for your request.Will contact you soon.");
+          },
+          (error) => {
+            console.error("Failed to send email.", error);
+            alert("Oops! Something went wrong. Please try again.");
+          }
+        );
+      setCurrentComponent(0);
+    };
   };
 
-  function registrationComponent(){
-   return ( <div className="regForm">
-      <h1 className="formHead">{registration[lang]}</h1>
-      <form onSubmit={handleSubmit} className="formFields">
-        <label className="field">
-        <p className="required">{lastName[lang]}:</p>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">{firstName[lang]}:</p>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">{dob[lang]}:</p>
-          <input
-            type="date"
-            name="dob"
-            value={formData.dob}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">{height[lang]}:</p>
-          <input
-            type="text"
-            name="height"
-            value={formData.height}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">{weight[lang]}:</p>
-          <input
-            type="text"
-            name="weight"
-            value={formData.weight}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-        <p className="required">{position[lang]}:</p>
-
-          <select
-            name="position"
-            value={formData.position}
-            onChange={handleChange}
-          >
-            <option value="">{options[lang][0]}</option>
-            <option value="Gréviste">{options[lang][1]}</option>
-            <option value="Milieu de terrain">{options[lang][2]}</option>
-            <option value="Gardienne">{options[lang][3]}</option>
-          </select>
-        </label>
-        <br />
-        <label className="field">
-        <p className="required">{foot[lang]}:</p>
-
-          <select
-            name="foot"
-            value={formData.foot}
-            onChange={handleChange}
-          >
-            <option value="">{footOption[lang][0]}</option>
-            <option value="Gauche">{footOption[lang][1]}</option>
-            <option value="droit">{footOption[lang][2]}</option>
-          </select>
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">{currentClub[lang]}:</p>
-          <input
-            type="text"
-            name="currentClub"
-            value={formData.currentClub}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">E-mail:</p>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-          <p className="required">Phone:</p>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label className="field">
-        <p className="required">{training[lang]}:</p>
-        
-         <select
-            name="trainingChoice"
-            value={formData.training}
-            onChange={handleChange}
-            className="dropdown"
-          >
-            <option value="">{trainingChoice[lang][0]}</option>
-            <option value="Samedi">{trainingChoice[lang][1]}</option>
-            <option value="Dimanche">{trainingChoice[lang][2]}</option>
-            <option value="Samedi and Dimanche">{trainingChoice[lang][3]}</option>
-          </select>
-        </label>
-        <br />
-        <label className="field">
-         <p>Message:</p> 
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-          />
-        </label>
-        <br />        
-        <label className="field">
-          <p>{photo[lang]}:</p>
-          <input
-            type="file"
-            name="file"
-            id="imageUpload"
-            // value={formData.phone}
-            // onChange={handleChange}
-            
-          />
-        </label>
-        <br />
-        <button type="submit" className="submit">{submit[lang]}</button>
-      </form>
-    </div>)
+  function registrationComponent() {
+    return (
+      <div className="regForm">
+        <h1 className="formHead">{registration[lang]}</h1>
+        <form onSubmit={handleSubmit} className="formFields" noValidate>
+          <label className="field">
+            <p className="required">{lastName[lang]}:</p>
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+              className={errors.lastName ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{firstName[lang]}:</p>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              className={errors.firstName ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{dob[lang]}:</p>
+            <input
+              type="date"
+              name="dob"
+              value={formData.dob}
+              onChange={handleChange}
+              required
+              className={errors.dob ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{height[lang]}:</p>
+            <input
+              type="text"
+              name="height"
+              value={formData.height}
+              onChange={handleChange}
+              required
+              className={errors.height ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{weight[lang]}:</p>
+            <input
+              type="text"
+              name="weight"
+              value={formData.weight}
+              onChange={handleChange}
+              required
+              className={errors.weight ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{position[lang]}:</p>
+            <select
+              name="position"
+              value={formData.position}
+              onChange={handleChange}
+              required
+              className={errors.position ? "input-error" : ""}
+            >
+              <option value="">{options[lang][0]}</option>
+              <option value="Gréviste">{options[lang][1]}</option>
+              <option value="Milieu de terrain">{options[lang][2]}</option>
+              <option value="Gardienne">{options[lang][3]}</option>
+            </select>
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{foot[lang]}:</p>
+            <select
+              name="foot"
+              value={formData.foot}
+              onChange={handleChange}
+              required
+              className={errors.foot ? "input-error" : ""}
+            >
+              <option value="">{footOption[lang][0]}</option>
+              <option value="Gauche">{footOption[lang][1]}</option>
+              <option value="droit">{footOption[lang][2]}</option>
+            </select>
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{currentClub[lang]}:</p>
+            <input
+              type="text"
+              name="currentClub"
+              value={formData.currentClub}
+              onChange={handleChange}
+              required
+              className={errors.currentClub ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">E-mail:</p>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className={errors.email ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">Phone:</p>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className={errors.phone ? "input-error" : ""}
+            />
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{training[lang]}:</p>
+            <select
+              name="trainingChoice"
+              value={formData.trainingChoice}
+              onChange={handleChange}
+              required
+              className={`dropdown${errors.trainingChoice ? " input-error" : ""}`}
+            >
+              <option value="">{trainingChoice[lang][0]}</option>
+              <option value="Samedi">{trainingChoice[lang][1]}</option>
+              <option value="Dimanche">{trainingChoice[lang][2]}</option>
+              <option value="Samedi and Dimanche">{trainingChoice[lang][3]}</option>
+            </select>
+          </label>
+          <br />
+          <label className="field">
+            <p className="required">{photo[lang]}:</p>
+            <input
+              type="file"
+              name="file"
+              id="imageUpload"
+              accept="image/*"
+              onChange={handlePhotoChange}
+              required
+              className={errors.photo ? "input-error" : ""}
+            />
+            <span style={{color: "red"}}>*</span>
+          </label>
+          <br />
+          <label className="field">
+            <p>Message:</p>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <button type="submit" className="submit">{submit[lang]}</button>
+        </form>
+      </div>
+    );
   }
 
   function registrationComplete(){

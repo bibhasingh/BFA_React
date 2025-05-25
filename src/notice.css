@@ -1,9 +1,113 @@
 .notice-link {
-    background: none;
+    display: inline-block;
+    background: linear-gradient(90deg, #e53935 0%, #ffd600 100%);
+    color: #1a1a1a;
     border: none;
-    color: inherit;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
+    border-radius: 32px;
+    padding: 28px 32px;
     font: inherit;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 24px 0 rgba(229, 57, 53, 0.18), 0 1.5px 8px 0 rgba(255, 214, 0, 0.12);
+    letter-spacing: 1px;
+    transition: 
+        color 0.2s,
+        background 0.2s,
+        box-shadow 0.2s,
+        transform 0.15s;
+    outline: none;
+    margin: 16px 0;
+    position: fixed;
+    top: 380px;
+    right: 180px;
+    left: auto;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 320px;
+    width: 60vw;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.notice-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 214, 0, 0.18);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    z-index: 0;
+}
+
+.notice-link:hover::after,
+.notice-link:focus::after {
+    width: 250%;
+    height: 250%;
+}
+
+.notice-link:hover,
+.notice-link:focus {
+    color: #e53935;
+    background: linear-gradient(90deg, #ffd600 0%, #e53935 100%);
+    box-shadow: 0 8px 32px 0 rgba(255, 214, 0, 0.22), 0 2px 12px 0 rgba(229, 57, 53, 0.18);
+    transform: scale(1.04) translateY(-2px);
+    outline: 3px solid #ffd600;
+    outline-offset: 2px;
+    z-index: 1;
+}
+
+.notice-link:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px 0 rgba(229, 57, 53, 0.10);
+}
+
+@media (max-width: 900px) {
+    .notice-link {
+        top: 210px;
+        right: 96px;
+        left: auto;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 80vw;
+        padding: 24px 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .notice-link {
+        top: auto;
+        bottom: 24px;
+        right: 16px;
+        left: 16px;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 92vw;
+        padding: 20px 10px;
+        border-radius: 20px;
+        width: auto;
+        box-sizing: border-box;
+        margin: 0;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 400px) {
+    .notice-link {
+        top: auto;
+        bottom: 12px;
+        right: 4px;
+        left: 4px;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 97vw;
+        padding: 16px 4px;
+        border-radius: 16px;
+    }
 }

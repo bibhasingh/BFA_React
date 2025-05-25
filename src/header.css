@@ -8,7 +8,8 @@
   height: 350px;
   min-width: 1280px;
 }
-.background-video{
+
+.background-video {
   position: fixed;
   margin-top: 50px;
   margin-left: 177px;
@@ -23,6 +24,7 @@
   height: 120px;
   width: 10%;
 }
+
 .headerText {
   display: flex;
 
@@ -32,22 +34,21 @@
   min-width: 860px;
   /* padding: 10px 22.5%; */
 }
-.headerText1{
+
+.headerText1 {
   background-color: black;
   color: white;
   height: 40px;
-  padding: 10px 0 10px 35% ;
+  padding: 10px 0 10px 35%;
   text-align: right;
-  
 }
-.headerText2{
+
+.headerText2 {
   background-color: yellow;
   text-align: left;
   height: 40px;
   padding: 10px 22% 10px 0;
- 
 }
-
 
 .languages {
   display: flex;
@@ -55,20 +56,20 @@
   align-items: flex-start;
   height: 60px;
   /* flex-shrink: 0; */
-  background-color:  rgb(255, 30, 0);
+  background-color: rgb(255, 30, 0);
   padding-right: 6%;
   padding-left: 5%;
-
 }
+
 .buttonLang {
   padding: 10px 12px;
   margin-top: 10px;
   border-radius: 12px;
   font-size: large;
 }
-.buttonLang.active {
 
-    background-color: yellow;
+.buttonLang.active {
+  background-color: yellow;
   color: black;
 }
 
@@ -77,19 +78,16 @@
   color: white;
 }
 
-
 @media screen and (max-width: 600px) {
   .header {
     height: 80px;
     max-width: 100%;
     background-image: none;
-    
   }
-  .headerText{
+  .headerText {
     min-width: 220px;
-   
   }
-  
+
   .image {
     height: 50px;
     width: 5%;
@@ -105,31 +103,22 @@
     padding: 3px;
     font-size: small;
   }
-  .background-video{
+  .background-video {
     display: none;
-
   }
 
-  .headerText1{
+  .headerText1 {
     height: 40px;
     padding: 20px 0 0 12%;
     font-size: medium;
-    
   }
-  .headerText2{
+  .headerText2 {
     height: 40px;
     padding: 20px 5% 0 0;
     font-size: medium;
     /* min-width: 180px; */
-
   }
-
-
 }
-
-
-
-
 
 /* @media screen and (max-height: 800px) {
   .header {

@@ -1,17 +1,32 @@
+/* Improved registration form styling for modern look, better spacing, and responsiveness */
+
 .regForm{
     min-width: 1105px;
     margin:30px 0;
 }
+
 .completeRegistration{
     width: 1105px;
     margin:30px 0; 
+    background: #232526;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(255, 214, 0, 0.10);
+    padding: 32px 0;
+    color: #ffd600;
+    text-align: center;
+    font-size: 1.5rem;
 }
-
 
 .formHead{
     text-align: center;
-    
+    color: black;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 8px rgba(229, 57, 53, 0.08);
 }
+
 .formFields{
     margin-top: 20px;
     margin-left: 300px;
@@ -21,19 +36,69 @@
     display: flex;
     align-items: center;
     gap:50px
-    
 }
 
 .field :first-child {
     min-width: 250px;
     font-size: x-large;
-  }
-  .field :nth-child(2){
+    color: #000; /* changed to black */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.field :nth-child(2),
+.field input,
+.field select,
+.field textarea {
     min-width: 400px;
     min-height: 40px;
-  }
+    font-size: 1.05rem;
+    border-radius: 8px;
+    border: 1.5px solid #ffd600;
+    padding: 8px 12px;
+    background: #fffde7; /* yellow-white tone */
+    color: #1a1a1a;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
 
-  .submit{
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border: 2px solid #e53935;
+    box-shadow: 0 0 0 2px #ffd60044;
+}
+
+input[type="file"] {
+    background: none;
+    color: #fffde7;
+    border: none;
+    min-width: unset;
+    min-height: unset;
+    padding: 0;
+    /* Remove width and background for file input */
+    width: auto;
+    background: none;
+}
+
+.field input[type="file"] {
+    min-width: unset;
+    min-height: unset;
+    font-size: 1rem;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    background: none;
+    color: inherit;
+    box-shadow: none;
+}
+
+textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.submit{
     text-align: center;
     padding: 10px;
     background-color: green;
@@ -43,14 +108,67 @@
     margin-left: 200px;
     cursor: pointer;
     border-radius: 12px;
-  }
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 12px rgba(255, 214, 0, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
 
-  .required::after {
+.submit:hover,
+.submit:focus {
+    background: linear-gradient(90deg, #ffd600 0%, #e53935 100%);
+    color: #e53935;
+    transform: scale(1.04) translateY(-2px);
+    box-shadow: 0 4px 24px rgba(229, 57, 53, 0.18);
+    outline: 2px solid #ffd600;
+    outline-offset: 2px;
+}
+
+.required::after {
     content: " *";
     color: red;
-  }
+}
 
-  @media screen and (max-width: 600px) {
+.input-error {
+    border: 2px solid red !important;
+    background: #fff0f0;
+}
+
+@media screen and (max-width: 900px) {
+    .regForm,
+    .completeRegistration {
+        min-width: 100px;
+        width: 98vw;
+        max-width: 98vw;
+        padding: 18px 0;
+    }
+    .formFields {
+        margin-left: 30px;
+        max-width: 95vw;
+    }
+    .field {
+        gap: 24px;
+    }
+    .field :first-child {
+        min-width: 120px;
+        font-size: 1rem;
+    }
+    .field :nth-child(2),
+    .field input,
+    .field select,
+    .field textarea {
+        min-width: 180px;
+        font-size: 0.98rem;
+    }
+    .submit {
+        margin-left: 60px;
+        font-size: 1.05rem;
+        padding: 10px 18px;
+    }
+}
+
+@media screen and (max-width: 600px) {
     .regForm{
         min-width: 100px;
         max-width: 100%;
