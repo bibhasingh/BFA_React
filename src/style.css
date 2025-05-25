@@ -5,6 +5,7 @@
 #root {
   max-width: 1280px;
   margin: auto;
+  position: relative;
 }
 .spacer {
   height: 60px;
@@ -13,6 +14,7 @@
 @media screen and (max-width: 600px) {
   #root {
     max-width: 100%;
+    position: relative;
   }
   .spacer {
     height: 50px;
