@@ -7,35 +7,35 @@ function Schedule({ lang }) {
    En: "SCHEDULE"
   };
   const head2 = {
-    Fr: ["Les samedis de 18h45 à 20h15 (Don Bosco)",
-      "Les dimanches de 16h45 à 18h30 (Sportcity)",
-      "Entrainements individuels possibles un vendredi sur deux de 17h à 18h00 et les dimanches de 15h00 à 16h00 (sur rendez-vous)"
+    Fr: ["Les samedis de 18h45 à 20h00 (Complexe Mounier 1150)",
+      "Les dimanches de 16h45 à 18h30 (Complexe Sport City 1150)",
+      "Les entraînements individuels sont possibles uniquement sur rendez vous les mercredis"
   ],
-    Nl: ["Zaterdag van 18.45 uur tot 20.15 uur (Don Bosco)",
-      "Zondag van 16.45 uur tot 18.30 uur (Sportcity)",
-      "Individuele training mogelijk elke andere vrijdag vanaf 17.00 uur. tot 18.00 uur en zondag vanaf 15.00 uur tot 16.00 uur (op afspraak)"
+    Nl: ["Zaterdag van 18.45 uur tot 20.00 uur (Complexe Mounier 1150)",
+      "Zondag van 16.45 uur tot 18.30 uur (Complexe Sport City 1150)",
+      "Individuele training is alleen mogelijk op afspraak op woensdag"
     ],
-    En: ["Saturdays from 6:45 p.m. to 8:15 p.m. (Don Bosco)",
-      "Sundays from 4:45 p.m. to 6:30 p.m. (Sportcity)",
-      "Individual training possible every other Friday from 5 p.m. to 6 p.m. and Sundays from 3 p.m. to 4 p.m. (by appointment)"
+    En: ["Saturdays from 6:45 p.m. to 8:00 p.m. (Complexe Mounier 1150)",
+      "Sundays from 4:45 p.m. to 6:30 p.m. (Complexe Sport City 1150)",
+      "Individual training is only possible by appointment on Wednesdays"
     ]
    };
    const p1 = {
-    Fr: ["Chaussures de foot en salle obligatoires",
-      "Catégorie : De 7 à 15 ans",
-    "* Formateur diplômé par l'Union Belge",
-  "* Langues parlées : Trilingue (Fr/Nl/En)"
+    Fr: ["Tachez systématiquement à ramener vos chaussures de football pour terrain synthétique (extérieur) ainsi que vos chaussures pour la salle (intérieur)",
+      "Catégorie d’âge : de 8 à 16 ans",
+    "* Entraînements de qualités par des formateurs diplômés par La Fédération Belge de Football",
+  "* Langues : Français / Néerlandais / Anglais"
 
 ],
-    Nl: ["Zaalvoetbalschoenen vereist",
-      "Categorie: Van 7 tot 15 jaar oud",
-      "* Trainer gekwalificeerd door de Belgische Unie",
-      "* Gesproken talen: Drietalig (Fr/Nl/En)"
+    Nl: ["Neem altijd je voetbalschoenen mee voor het kunstgrasveld (buiten) en ook je zaalschoenen",
+      "Leeftijdscategorie: 8 tot 16 jaar",
+      "* Kwaliteitsvolle trainingen door instructeurs die gecertificeerd zijn door de Belgische Voetbalbond",
+      "* Talen: Frans / Nederlands / Engels"
     ],
-    En: ["Indoor soccer shoes required",
-      "Category: From 7 to 15 years old",
-      "* Trainer qualified by the Belgian Union",
-      "* Languages spoken: Trilingual (Fr/Nl/En)"
+    En: ["Always bring your soccer shoes for the artificial pitch (outdoors) as well as your indoor shoes",
+      "Age category: 8 to 16 years old",
+      "* Quality training sessions by instructors certified by the Belgian Football Federation",
+      "* Languages: French / Dutch / English"
     ]
    }
 
