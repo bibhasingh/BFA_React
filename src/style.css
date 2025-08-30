@@ -10,6 +10,10 @@
 .spacer {
   height: 60px;
 }
+.instructions {
+  font-size: 24px;
+  color: #333;
+}
 
 @media screen and (max-width: 600px) {
   #root {
