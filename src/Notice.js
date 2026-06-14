@@ -9,9 +9,9 @@ function Notice() {
     const { myCurrentLang } = useMyLang();
 
     const registration={
-        Fr: "Inscrivez-vous pour la session 2025-2026",
-        Nl: "Registreer voor sessie 2025-2026",
-        En: "Register for session 2025-2026",
+        Fr: "Inscrivez-vous pour la session 2026-2027",
+        Nl: "Registreer voor sessie 2026-2027",
+        En: "Register for session 2026-2027",
     }
 
     function handleNoticeClick() {
